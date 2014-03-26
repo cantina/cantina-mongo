@@ -14,7 +14,7 @@ conf.url = buildConnectUrl();
 
 app.mongo = null;
 
-// Must use hooks as the connect method is
+// Must use hooks as the connect method is asynchronous
 app.hook('start').add(function mongoConnect (done) {
   var client = new mongodb.MongoClient();
   client.connect(conf.url, conf.options, function (err, db) {
