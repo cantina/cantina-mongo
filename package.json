@@ -1,0 +1,28 @@
+{
+  "name": "cantina-mongo",
+  "version": "0.0.0",
+  "private": true,
+  "description": "MongoDB for Cantina applications",
+  "main": "cantina-mongo.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cantina/cantina-mongo.git"
+  },
+  "author": "",
+  "license": "none",
+  "bugs": {
+    "url": "https://github.com/cantina/cantina-mongo/issues"
+  },
+  "homepage": "https://github.com/cantina/cantina-mongo",
+  "dependencies": {
+    "mongodb": "^1.3.23"
+  },
+  "devDependencies": {
+    "mocha": "^1.18.2",
+    "cantina": "cantina/cantina.git#3.x",
+    "idgen": "^1.3.0"
+  }
+}
