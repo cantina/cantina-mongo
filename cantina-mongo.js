@@ -1,5 +1,5 @@
 var app = require('cantina')
-  , mongodb = require('mongodb')
+  , mongojs = require('mongojs')
   , stringify = require('querystring').stringify;
 
 app.conf.add({
@@ -12,18 +12,7 @@ app.conf.add({
 var conf = app.conf.get('mongo');
 conf.url = buildConnectUrl();
 
-app.mongo = null;
-
-// Must use hooks as the connect method is asynchronous
-app.hook('start').add(function mongoConnect (done) {
-  var client = new mongodb.MongoClient();
-  client.connect(conf.url, conf.options, function (err, db) {
-    if (err) return done(err);
-    app.mongo = db;
-    app.mongo.client = client;
-    done();
-  });
-});
+app.mongo = mongojs(conf.url);
 
 /**
  * Builds a MongoDB standard connection string, as defined at
