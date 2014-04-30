@@ -6,10 +6,9 @@ describe('basic', function (){
   before(function (done) {
     app = require('cantina');
     app.boot(function(err) {
-      app.conf.set('mongo:db', 'test-' + idgen());
+      app.conf.set('mongo:db', 'cantina-mongo-test-' + idgen());
       require('../');
-      if (err) return done(err);
-      app.start(done);
+      done(err);
     });
   });
 
