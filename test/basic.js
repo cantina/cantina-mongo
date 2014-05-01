@@ -1,15 +1,14 @@
 describe('basic', function (){
 
   var app
-    , mongodb = require('mongodb');
+    , mongojs = require('mongojs');
 
   before(function (done) {
     app = require('cantina');
     app.boot(function(err) {
-      app.conf.set('mongo:db', 'test-' + idgen());
+      app.conf.set('mongo:db', 'cantina-mongo-test-' + idgen());
       require('../');
-      if (err) return done(err);
-      app.start(done);
+      done(err);
     });
   });
 
@@ -21,7 +20,6 @@ describe('basic', function (){
 
   it('connects', function (done) {
     assert(app.mongo);
-    assert(app.mongo instanceof mongodb.Db);
     done();
   });
 
@@ -31,11 +29,12 @@ describe('basic', function (){
     collection.insert(obj, function (err) {
       assert.ifError(err);
       assert(obj._id);
-      assert(obj._id instanceof mongodb.ObjectID);
-      collection.findOne({}, function (err, item) {
+      assert(obj._id instanceof mongojs.ObjectId);
+      collection.find({}).limit(1).toArray(function (err, results) {
         assert.ifError(err);
+        var item = results.pop();
         assert(item);
-        assert(item._id instanceof mongodb.ObjectID);
+        assert(item._id instanceof mongojs.ObjectId);
         // Deep Equal doesn't work with MongoDB ObjectIDs :'(
         assert(item._id.equals(obj._id));
         delete item._id;
