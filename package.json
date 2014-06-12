@@ -1,7 +1,9 @@
 {
   "name": "cantina-mongo",
-  "version": "3.0.1",
-  "private": true,
+  "version": "4.0.0-dev",
+  "publishConfig": {
+    "registry": "https://npm-registry.terraeclipse.com"
+  },
   "description": "MongoDB for Cantina applications",
   "main": "cantina-mongo.js",
   "scripts": {
@@ -20,9 +22,12 @@
   "dependencies": {
     "mongojs": "^0.13.0"
   },
+  "peerDependencies": {
+    "cantina": "~4.0.0"
+  },
   "devDependencies": {
     "mocha": "^1.18.2",
-    "cantina": "cantina/cantina.git#3.x",
+    "cantina": "~4.0.0",
     "idgen": "^1.3.0"
   }
 }
