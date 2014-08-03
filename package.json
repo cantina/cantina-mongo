@@ -1,9 +1,6 @@
 {
   "name": "cantina-mongo",
   "version": "4.1.0",
-  "publishConfig": {
-    "registry": "https://npm-registry.terraeclipse.com"
-  },
   "description": "MongoDB for Cantina applications",
   "main": "cantina-mongo.js",
   "scripts": {
@@ -13,8 +10,13 @@
     "type": "git",
     "url": "git://github.com/cantina/cantina-mongo.git"
   },
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  ],
   "author": "",
-  "license": "none",
   "bugs": {
     "url": "https://github.com/cantina/cantina-mongo/issues"
   },

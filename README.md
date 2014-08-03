@@ -34,8 +34,3 @@ Configuration
 
 Terra Eclipse, Inc. is a nationally recognized political technology and
 strategy firm located in Santa Cruz, CA and Washington, D.C.
-
-- - -
-
-Copyright (C) 2014 Terra Eclipse, Inc. ([http://www.terraeclipse.com](http://www.terraeclipse.com))
-All rights reserved.
