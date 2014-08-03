@@ -1,6 +1,6 @@
 {
   "name": "cantina-mongo",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "MongoDB for Cantina applications",
   "main": "cantina-mongo.js",
   "scripts": {
